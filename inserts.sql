@@ -62,3 +62,52 @@ values
 ('Sabrina Gomes', 30, false, false, true, '1995-02-24', 1.65, 6.800, 'F', 'São Paulo'),
 ('Otavio Alves', 51, true, false, false, '1974-10-06', 1.74, 12.600, 'M', 'Curitiba'),
 ('Clarissa Ribeiro', 27, false, false, false, '1998-06-15', 1.62, 5.400, 'F', 'Rio de Janeiro');
+
+insert into medicos
+  
+(nome, idade, especialidade)
+
+values
+
+('Rosa', 54, 'Pediatria'),
+('Amaro', 49, 'Cardiologia'),
+('Annie', 43, 'Pediatria');
+
+-- Set those 3 medics above, but the other ones I asked to AI to generate random ones, for test it like "real" case.
+
+('Carlos Henrique', 52, 'Cardiologia'),
+('Fernanda Souza', 38, 'Dermatologia'),
+('João Pedro', 45, 'Ortopedia'),
+('Mariana Alves', 41, 'Clínico Geral'),
+('Ricardo Lima', 56, 'Neurologia'),
+('Patrícia Gomes', 47, 'Endocrinologia'),
+('Bruno Santos', 39, 'Pediatria'),
+('Juliana Rocha', 44, 'Ginecologia'),
+('Lucas Martins', 36, 'Urologia'),
+('Ana Beatriz', 50, 'Cardiologia'),
+('Felipe Costa', 42, 'Ortopedia'),
+('Camila Ribeiro', 37, 'Dermatologia'),
+('Rafael Almeida', 53, 'Neurologia'),
+('Letícia Ferreira', 40, 'Clínico Geral'),
+('Gustavo Pereira', 48, 'Endocrinologia'),
+('Bianca Carvalho', 35, 'Pediatria'),
+('Eduardo Mendes', 55, 'Cardiologia');
+
+insert into consultas
+
+(paciente_id, medico_id, data_consulta, valor_da_consulta)
+
+select 
+(floor(random() * 50 + 1))::int as paciente_id,
+(floor(random() * 20 + 1))::int as medico_id,
+(date '2026-01-01' + (random() * 180)::int) as data_consulta,
+round((80 + random() * 680)::numeric, 2) as valor_da_consulta
+
+from generate_series(1,600);
+
+*/
+This one, since I'm starting, asked to AI some help how to generate random appointments between doctors and patients.
+I got that with this lines, we are insert into 'consultas' table random patients between 1 and 50 (int), same for medicos, but as I did 20 doctor,
+1 to 20 doctors randomly, the data will start at 2026-01-01 and will be the next 180 days, randomly also, and the value of the appointment will be
+random also, between R$80,00 and R$680,00, with 2 digits after the comma ",", and will generate 1 to 600 appointments, so I got what is happening
+/*
