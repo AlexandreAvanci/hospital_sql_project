@@ -1,6 +1,3 @@
-# hospital_sql_project
-SQL practice project simulating a hospital database using PostgreSQL.
-
 # Hospital system - SQL project
 
 This project simulate an hospital system, with patients, doctors and appointments.
