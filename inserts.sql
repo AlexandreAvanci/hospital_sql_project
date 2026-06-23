@@ -73,7 +73,7 @@ values
 ('Amaro', 49, 'Cardiologia'),
 ('Annie', 43, 'Pediatria');
 
--- Set those 3 medics above, but the other ones I asked to AI to generate random ones, for test it like "real" case.
+-- Set those 3 doctors above, but the other ones I asked to AI to generate random ones, for test it like "real" case.
 
 ('Carlos Henrique', 52, 'Cardiologia'),
 ('Fernanda Souza', 38, 'Dermatologia'),
@@ -104,10 +104,3 @@ select
 round((80 + random() * 680)::numeric, 2) as valor_da_consulta
 
 from generate_series(1,600);
-
-*/
-This one, since I'm starting, asked to AI some help how to generate random appointments between doctors and patients.
-I got that with this lines, we are insert into 'consultas' table random patients between 1 and 50 (int), same for medicos, but as I did 20 doctor,
-1 to 20 doctors randomly, the data will start at 2026-01-01 and will be the next 180 days, randomly also, and the value of the appointment will be
-random also, between R$80,00 and R$680,00, with 2 digits after the comma ",", and will generate 1 to 600 appointments, so I got what is happening
-/*
