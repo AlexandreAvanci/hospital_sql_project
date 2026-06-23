@@ -85,3 +85,44 @@ where extract(month from data_consulta) = 1
 and extract(year from data_consulta) = 2026
 order by data_consulta asc;
 
+-- 15. Appointments in May.
+
+select nome, data_consulta as consultas_em_maio from pacientes
+inner join consultas
+on pacientes.id = consultas.paciente_id
+where extract(month from data_consulta) = 5
+and extract(year from data_consulta) = 2026
+order by data_consulta asc;
+
+-- 15. Revenue by city.
+
+select cidade, sum(valor_da_consulta) as faturamento_por_cidade from pacientes
+inner join consultas
+on pacientes.id = consultas.paciente_id
+group by cidade
+order by cidade asc;
+
+-- 16. Revenue by doctor's specialty.
+
+select especialidade, sum(valor_da_consulta) as valor_total_por_especialidade from medicos
+inner join consultas
+on medicos.id = consultas.medico_id
+group by especialidade
+order by valor_total_por_especialidade desc;
+
+-- 17. Raising revenue by month.
+
+select
+sum(valor_da_consulta) as valor_total_por_mes,
+extract(month from data_consulta) as mes,
+extract(year from data_consulta) as ano
+from consultas
+group by mes, ano
+order by mes, ano asc;
+
+-- 18. Average revenue by doctors.
+
+select nome, round(avg(valor_da_consulta),2) as valor_medio_por_medico from medicos
+inner join consultas
+on medicos.id = consultas.medico_id
+group by nome;
