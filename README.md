@@ -1,31 +1,40 @@
-# Hospital system - SQL project
+# Hospital System - SQL Project
 
-This project simulate an hospital system, with patients, doctors and appointments.
+Project of a hospital system focused on data analysis using SQL.
 
-# Objective
+# Goal
 
-Practice data bases with SQL
-- JOINs
-- (SUM, COUNT, AVG)
-- Filters
-- Simulate data
+Create a relational database to practice:
+- Data modeling
+- Table relationships
+- Analytical queries
+- Aggregations and business metrics
 
-# Data structure
+# Database Structure
 
-The system got 3 tables:
+- patients
+- doctors
+- appointments
 
-- **pacientes**
-- **medicos**
-- **consultas**
+# Project Highlights
 
-# Used tools
+- Use of JOINs between tables
+- Aggregations with SUM, COUNT, and AVG
+- Organization of simulated data
+- Building hospital metrics
 
-- **PostgreSQL**
-- **DBeaver**
+# Technologies
 
-# How to execute
+- PostgreSQL
+- DBeaver
 
-1. Create a data base
-2. Run the table creation scripts
-3. Insert testing data
-4. Execute queries from analysis
+# How to run
+
+1. Create the database
+2. Run 'schema.sql'
+3. Run 'inserts.sql'
+4. Execute queries from the '/queries' folder
+
+# Conclusion
+
+Project developed for practicing SQL and simulating a real hospital scenario.
