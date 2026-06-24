@@ -1,1 +1,8 @@
+15. Appointments in May.
 
+select nome, data_consulta as consultas_em_maio from pacientes
+inner join consultas
+on pacientes.id = consultas.paciente_id
+where extract(month from data_consulta) = 5
+and extract(year from data_consulta) = 2026
+order by data_consulta asc;
