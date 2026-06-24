@@ -2,7 +2,7 @@
 
 -- 1. List all the patients.
 
-select nome from patients;
+select nome from pacientes;
 
 -- 2. List all doctors.
 
